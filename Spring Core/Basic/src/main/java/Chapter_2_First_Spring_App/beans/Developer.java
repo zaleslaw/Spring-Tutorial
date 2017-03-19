@@ -20,6 +20,10 @@ public class Developer {
         this.name = name;
     }
 
+    public Developer(int level) {
+        this.level = level;
+    }
+
     public Developer() {
     }
 
