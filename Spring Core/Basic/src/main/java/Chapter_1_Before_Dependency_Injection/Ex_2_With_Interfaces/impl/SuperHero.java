@@ -1,6 +1,6 @@
-package Before_Dependency_Injection.Ex_2_With_Interfaces.impl;
+package Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.impl;
 
-import Before_Dependency_Injection.Ex_2_With_Interfaces.interfaces.Human;
+import Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.interfaces.Human;
 
 /**
  * Created by Alexey_Zinovyev on 18-Mar-17.

@@ -1,9 +1,9 @@
-package Before_Dependency_Injection.Ex_2_With_Interfaces;
+package Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces;
 
-import Before_Dependency_Injection.Ex_2_With_Interfaces.impl.Citizen;
-import Before_Dependency_Injection.Ex_2_With_Interfaces.impl.Joker;
-import Before_Dependency_Injection.Ex_2_With_Interfaces.impl.SuperHero;
-import Before_Dependency_Injection.Ex_2_With_Interfaces.interfaces.Human;
+import Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.impl.Citizen;
+import Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.impl.Joker;
+import Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.impl.SuperHero;
+import Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.interfaces.Human;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package Before_Dependency_Injection.Ex_3_Factory_Pattern;
+package Chapter_1_Before_Dependency_Injection.Ex_3_Factory_Pattern;
 
-import Before_Dependency_Injection.Ex_2_With_Interfaces.interfaces.Human;
+import Chapter_1_Before_Dependency_Injection.Ex_2_With_Interfaces.interfaces.Human;
 
 import java.util.ArrayList;
 import java.util.List;
