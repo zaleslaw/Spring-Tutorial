@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created by Alexey_Zinovyev on 19-Mar-17.
  */
-public class Ex_1_Parent_Context {
+public class Ex_1_Context_Divide_and_Conqure {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("Chapter_4/App.xml");
 
