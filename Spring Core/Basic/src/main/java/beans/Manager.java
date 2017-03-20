@@ -8,15 +8,9 @@ import java.util.Set;
 public class Manager {
     private String name;
     private int emailPerHour;
-    private Set<Developer> developers;
+    private Set<Engineer> engineers;
 
     public Manager() {
-    }
-
-    public Manager(String name, int emailPerHour, Set<Developer> developers) {
-        this.name = name;
-        this.emailPerHour = emailPerHour;
-        this.developers = developers;
     }
 
     public String getName() {
@@ -35,12 +29,12 @@ public class Manager {
         this.emailPerHour = emailPerHour;
     }
 
-    public Set<Developer> getDevelopers() {
-        return developers;
+    public Set<Engineer> getEngineers() {
+        return engineers;
     }
 
-    public void setDevelopers(Set<Developer> developers) {
-        this.developers = developers;
+    public void setEngineers(Set<Engineer> engineers) {
+        this.engineers = engineers;
     }
 
     @Override
@@ -48,7 +42,7 @@ public class Manager {
         return "Manager{" +
                 "name='" + name + '\'' +
                 ", emailPerHour=" + emailPerHour +
-                ", developers=" + developers +
+                ", engineers=" + engineers +
                 '}';
     }
 }

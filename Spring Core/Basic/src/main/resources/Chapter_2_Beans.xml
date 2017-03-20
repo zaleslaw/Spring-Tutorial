@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="dev" class="beans.Developer">
+              <property name="name" value="Petja"/>
+              <property name="skill" value="Java"/>
+              <property name="level" value="2"/>
+              <property name="yearsInFramework">
+                     <map>
+                            <entry key="Spring" value="3"/>
+                            <entry key ="Hibernate" value="2"/>
+                            <entry key ="Mockito" value="1"/>
+                     </map>
+              </property>
+       </bean>
+
+       <bean id="tester" class="beans.AutomationTester">
+             <property name="name"  value="Vasja"/>
+              <property name="skill" value="Python"/>
+              <property name="level" value="1"/>
+              <property name="favoriteFramework" value="Django"/>
+              <property name="isBro" value="true"/>
+       </bean>
+
+       <bean id="manager" class="beans.Manager">
+              <property name="name" value="Ivan Ivanovich"/>
+              <property name="emailPerHour" value="1000"/>
+              <property name="engineers">
+                     <set>
+                            <ref bean="dev"/>
+                            <ref bean="tester"/>
+                     </set>
+              </property>
+       </bean>
+
+       <!--Ex_2_After_Properties_Set-->
+       <!-- <bean id="InitBean" class="Chapter_2_Bean_Lifecycle.special_beans.InitBean"/>
+       <bean id="YetAnotherInitBean" class="Chapter_2_Bean_Lifecycle.special_beans.YetAnotherInitBean"/>-->
+
+
+       <!--<bean id="NY_Times" class="beans.Project" init-method="init">-->
+       <!--Ex_5_Destroy_method-->
+       <bean id="NY_Times" class="beans.Project" init-method="init" destroy-method="destroy">
+              <constructor-arg value="Backend for NYT"/>
+              <constructor-arg>
+                     <list>
+                            <ref bean="dev"/>
+                            <ref bean="tester"/>
+                            <ref bean="manager"/>
+                     </list>
+              </constructor-arg>
+       </bean>
+
+       <!--Ex_2_After_Properties_Set-->
+       <bean id="InitBean" class="Chapter_2_Bean_Lifecycle.special_beans.InitBean"/>
+       <bean id="YetAnotherInitBean" class="Chapter_2_Bean_Lifecycle.special_beans.YetAnotherInitBean"/>
+
+
+       <!--Ex_3_Bean_Post_Processor-->
+       <bean class="Chapter_2_Bean_Lifecycle.special_beans.CustomBPP"/>
+       <bean class="Chapter_2_Bean_Lifecycle.special_beans.AnotherCustomBPP"/>
+
+       <!--Ex_4_Lazy_init-->
+       <bean id="lazyJunior" class="beans.Developer" lazy-init="true">
+              <property name="name" value="Sanja"/>
+              <property name="skill" value="Clojure"/>
+              <property name="level" value="1"/>
+              <property name="yearsInFramework">
+                     <map>
+                            <entry key="Spring" value="0"/>
+                            <entry key ="Hibernate" value="0"/>
+                     </map>
+              </property>
+       </bean>
+
+       <!--Ex_5_Destroy_method-->
+       <bean id="DestroyBean" class="Chapter_2_Bean_Lifecycle.special_beans.DestroyBean"/>
+
+</beans>

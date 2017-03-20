@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:util="http://www.springframework.org/schema/util"
+
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+       <!-- for Ex_1_Map_Injection-->
+       <bean id="dev" class="beans.Developer">
+              <property name="name" value="Petja"/>
+              <property name="skill" value="Java"/>
+              <property name="level" value="2"/>
+              <property name="yearsInFramework">
+                     <map>
+                            <entry key="Spring" value="3"/>
+                            <entry key ="Hibernate" value="2"/>
+                            <entry key ="Mockito" value="1"/>
+                     </map>
+              </property>
+       </bean>
+       <!-- for Ex_2_Set_Injection-->
+       <bean id="tester" class="beans.AutomationTester">
+              <property name="name"  value="Vasja"/>
+              <property name="skill" value="Python"/>
+              <property name="level" value="1"/>
+              <property name="favoriteFramework" value="Django"/>
+              <property name="isBro" value="true"/>
+       </bean>
+
+       <bean id="manager" class="beans.Manager">
+              <property name="name" value="Ivan Ivanovich"/>
+              <property name="emailPerHour" value="1000"/>
+              <property name="engineers">
+                     <set>
+                            <ref bean="dev"/>
+                            <ref bean="tester"/>
+                     </set>
+              </property>
+       </bean>
+
+       <!-- for Ex_3_Util_Namespace-->
+       <util:set id="pool" set-class="java.util.HashSet">
+              <ref bean="dev"/>
+              <ref bean="tester"/>
+       </util:set>
+
+       <bean id="otherManager" class="beans.Manager">
+              <property name="name" value="Sergey Sergeich"/>
+              <property name="emailPerHour">
+                     <util:constant static-field="java.lang.Math.PI"/>
+              </property>
+              <property name="engineers">
+                     <ref bean="pool"/>
+              </property>
+       </bean>
+
+</beans>

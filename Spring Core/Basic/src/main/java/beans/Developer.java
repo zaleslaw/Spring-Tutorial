@@ -10,6 +10,7 @@ public class Developer extends Engineer {
     private boolean isCoffeeConsumer;
 
     public Developer() {
+        System.out.println("Developer was hired!");
     }
 
     public Map<String, Integer> getYearsInFramework() {
