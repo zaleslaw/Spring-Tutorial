@@ -174,3 +174,46 @@ and print out **Object o** before custom init-method call and after
        </bean>
        
 and run client code 
+
+8. Destroy metod TODO:
+9. **Bean Inheritance:** add bean definition
+
+       <bean name="engineer" class="beans.Engineer">
+              <property name="name" value="anonymous"/>
+       </bean>
+       
+add parent="engineer" to dev, tester, manager beans and remove property 'name' from them
+like this:
+       
+       <bean id="tester" class="beans.AutomationTester" parent="engineer">
+              <property name="skill" value="Python"/>
+              <property name="level" value="1"/>
+              <property name="favoriteFramework" value="Django"/>
+              <property name="isBro" value="true"/>
+       </bean>
+              
+run client code
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("Chapter_3_1_Beans.xml");
+        Project project = context.getBean("NY_Times", Project.class);
+        System.out.println(project.toString());
+        
+It works cause all three beans have common field 'name'
+
+But if we set yet one property in 'engineer' bean like 
+
+       <bean name="engineer" class="beans.Engineer">
+              <property name="name" value="anonymous"/>
+              <property name="level" value="2"/>
+       </bean>
+
+we get "Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'level' of bean class [beans.Manager]: Bean property 'level' is not writable or has an invalid setter method"
+due to mismatch between property 'level' and setters in manager
+
+Q: Can we resolve this problem?
+A: Add setter to 'manager' bean according his bean definition based on parent bean definition.
+
+
+
+10. Multiple Context TODO:
+11. Autowiring TODO:
