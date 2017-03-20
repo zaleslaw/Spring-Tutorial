@@ -1,4 +1,4 @@
-package Chapter_3_Bean_Inheritance;
+package Chapter_3_Bean_Dependencies;
 
 import beans.Project;
 import org.springframework.context.ApplicationContext;

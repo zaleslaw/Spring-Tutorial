@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+       <bean id="NY_Times" class="beans.Project">
+              <constructor-arg value="Backend for NYT"/>
+              <constructor-arg>
+                     <list>
+                            <ref bean="manager"/>
+                     </list>
+              </constructor-arg>
+       </bean>
+
+       <bean id="dev" class="beans.Developer" lazy-init="true">
+              <property name="name" value="Alex"/>
+              <property name="skill" value="Java"/>
+              <property name="level" value="2"/>
+              <property name="yearsInFramework">
+                     <map>
+                            <entry key="Spring" value="3"/>
+                            <entry key ="Hibernate" value="2"/>
+                            <entry key ="Mockito" value="1"/>
+                     </map>
+              </property>
+       </bean>
+
+       <bean id="tester" class="beans.AutomationTester" lazy-init="true">
+              <property name="name" value="Roma"/>
+              <property name="skill" value="Python"/>
+              <property name="level" value="1"/>
+              <property name="favoriteFramework" value="Django"/>
+              <property name="isBro" value="true"/>
+       </bean>
+
+       <!--<bean id="manager" class="beans.Manager">-->
+       <bean id="manager" class="beans.Manager" depends-on="dev, tester">
+              <property name="emailPerHour" value="1000"/>
+              <property name="engineers">
+                   <null/>
+              </property>
+       </bean>
+
+       <bean class="Chapter_2_Bean_Lifecycle.special_beans.CustomBPP"/>
+</beans>

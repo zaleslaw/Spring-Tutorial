@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <import resource="Projects.xml"/>
+
+       <bean id="InitBean" class="Chapter_2_Bean_Lifecycle.special_beans.InitBean"/>
+       <bean class="Chapter_2_Bean_Lifecycle.special_beans.CustomBPP"/>
+       <bean id="DestroyBean" class="Chapter_2_Bean_Lifecycle.special_beans.DestroyBean"/>
+
+</beans>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean name="engineer" class="beans.Engineer">
+              <property name="name" value="anonymous"/>
+       </bean>
+
+       <bean id="developer" class="beans.Developer" parent="engineer">
+              <property name="skill" value="Java"/>
+              <property name="level" value="2"/>
+              <property name="yearsInFramework">
+                     <map>
+                            <entry key="Spring" value="3"/>
+                            <entry key ="Hibernate" value="2"/>
+                            <entry key ="Mockito" value="1"/>
+                     </map>
+              </property>
+       </bean>
+
+       <bean id="tester" class="beans.AutomationTester" parent="engineer">
+              <property name="skill" value="Python"/>
+              <property name="level" value="1"/>
+              <property name="favoriteFramework" value="Django"/>
+              <property name="isBro" value="true"/>
+       </bean>
+
+       <bean id="manager" class="beans.Manager" parent="engineer">
+              <property name="emailPerHour" value="1000"/>
+              <property name="engineers">
+                     <set>
+                            <ref bean="developer"/>
+                            <ref bean="tester"/>
+                     </set>
+              </property>
+       </bean>
+
+       <bean id="Mobile Post of Russian Federation" class="Chapter_5_Autowiring.beans.SmallProject">
+              <constructor-arg value="Android App"/>
+              <property name="developer" ref="developer"/>
+              <property name="manager" ref="manager"/>
+              <property name="tester" ref="tester"/>
+       </bean>
+
+
+</beans>
