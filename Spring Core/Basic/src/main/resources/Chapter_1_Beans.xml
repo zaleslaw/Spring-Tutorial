@@ -9,7 +9,7 @@
 
 
        http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+       http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
        <!-- for Ex_1_Map_Injection-->
        <bean id="dev" class="beans.Developer">
@@ -24,6 +24,7 @@
                      </map>
               </property>
        </bean>
+
        <!-- for Ex_2_Set_Injection-->
        <bean id="tester" class="beans.AutomationTester">
               <property name="name"  value="Vasja"/>

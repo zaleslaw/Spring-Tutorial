@@ -23,6 +23,8 @@ public class Ex_1_Autowiring {
         project = context.getBean("Mobile Post of Russian Federation", SmallProject.class);
         System.out.println(project.toString());
 
+
+        // Special case with String
         String str = context.getBean("Constant", String.class);
         System.out.println(str);
 

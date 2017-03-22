@@ -1,5 +1,6 @@
 package Chapter_2_Bean_Lifecycle;
 
+import beans.Developer;
 import beans.Project;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,6 +15,9 @@ public class Ex_1_Init_method {
 
         Project project = context.getBean("NY_Times", Project.class);
         System.out.println(project.toString());
+
+        Developer dev = context.getBean("dev", Developer.class);
+        System.out.println(dev.toString());
 
     }
 }

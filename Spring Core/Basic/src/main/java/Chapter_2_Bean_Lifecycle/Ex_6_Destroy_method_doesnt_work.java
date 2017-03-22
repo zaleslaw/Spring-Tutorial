@@ -21,7 +21,7 @@ public class Ex_6_Destroy_method_doesnt_work {
 
         /*((AbstractApplicationContext)context).close();*/
         System.out.println(project.toString()); //Object is alive without Spring!
-        Thread.sleep(10000);
+        Thread.sleep(10000); // kill JVM at this moment
 
     }
 }
